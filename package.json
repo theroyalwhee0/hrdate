@@ -12,6 +12,14 @@
   "directories": {
     "test": "test"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theroyalwhee0/hrdate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/theroyalwhee0/hrdate/issues"
+  },
+  "homepage": "https://github.com/theroyalwhee0/hrdate#readme",
   "scripts": {
     "test": "ava",
     "test-watch": "ava --watch",
