@@ -1,13 +1,13 @@
 {
   "name": "@theroyalwhee0/hrdate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "High Resolution Date Time for Node",
   "main": "src/index.js",
   "author": "Adam Mill <theroyalwhee0@gmail.com>",
   "license": "Apache-2.0",
   "keywords": [
     "date",
-    "nanosecond",
+    "nanosecond"
   ],
   "directories": {
     "test": "test"
