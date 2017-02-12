@@ -7,3 +7,6 @@ const { hrDate } = require('@theroyalwhee0/hrdate');
 const [second, nanosecond] = hrDate();
 console.log(`${second}.${nanosecond}`);
 ```
+
+## History
+ - 0.0.4 Fix off by one error in nanosecond carry.

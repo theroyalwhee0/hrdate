@@ -9,8 +9,9 @@ const ONEMILLION = 1000000;
 const ONEBILLION = 1000000000;
 
 /**
- * Get the current low resolution time as
- * a split second/nanosecond pair array.
+ * Get the current low resolution time as a split second/nanosecond pair array.
+ * @return {Array<Number,Number>}         Array pair with seconds/nanoseconds
+ * from the current low resolution date time.
  */
 function lrDate() {
   const date = Date.now(); // Date in milliseconds
@@ -21,15 +22,23 @@ function lrDate() {
 
 /**
  * High resolution date time function factory.
+ * @param  {Object} options Options.
+ * @return {Function}         The hrDate function that was built.
  */
-function hrDateFactory() {
-  const [startSeconds, startNanoseconds] = lrDate();
-  const startHr = process.hrtime();
+function hrDateFactory(options) {
+  const platformHrTime = options && options.platformHrTime
+    ? options.platformHrTime
+    : process.hrtime;
+  const platformLrTime = options && options.platformLrTime
+    ? options.platformLrTime
+    : lrDate;
+  const [startSeconds, startNanoseconds] = platformLrTime();
+  const startHr = platformHrTime();
   return function hrDate() {
-    const [hrSeconds, hrNanoseconds] = process.hrtime(startHr);
+    const [hrSeconds, hrNanoseconds] = platformHrTime(startHr);
     let nanoseconds = startNanoseconds + hrNanoseconds;
     let carry = 0;
-    if (nanoseconds > ONEBILLION) {
+    if (nanoseconds >= ONEBILLION) {
       carry = Math.floor(nanoseconds / ONEBILLION);
       nanoseconds %= ONEBILLION;
     }
@@ -39,7 +48,9 @@ function hrDateFactory() {
 }
 
 /**
- * hrDate.
+ * Get the current hight resolution time as a split second/nanosecond pair array.
+ * @return {Array<Number,Number>}         Array pair with seconds/nanoseconds
+ * of the current date time.
  */
 const hrDate = hrDateFactory();
 

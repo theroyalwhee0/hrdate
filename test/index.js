@@ -84,13 +84,25 @@ test('hrDate: should only rise over time', async (check) => {
  */
 test('hrDateFactory: should be a function', (check) => {
   check.is(typeof hrDateFactory, 'function');
-  check.is(hrDateFactory.length, 0);
+  check.is(hrDateFactory.length, 1);
 });
 test('hrDateFactory: should build a hrDate function', (check) => {
   const results = hrDateFactory();
   check.is(typeof results, 'function');
   check.is(results.length, 0);
   check.is(results.name, 'hrDate');
+});
+test('hrDateFactory: should not have off by one issue in nanosecond carry', (check) => {
+  // Issue: Off by one in nanosecond carry. https://github.com/theroyalwhee0/hrdate/issues/1
+  const hrDateCarry = hrDateFactory({
+    platformLrTime: () => [1, 999999000],
+    platformHrTime: () => [0, 1000],
+  });
+  const results = hrDateCarry();
+  check.true(Array.isArray(results));
+  const [seconds, nanoseconds] = results;
+  check.is(seconds, 2);
+  check.is(nanoseconds, 0);
 });
 
 /**
