@@ -17,7 +17,7 @@ function lrDate() {
   const date = Date.now(); // Date in milliseconds
   const seconds = Math.floor(date / 1000);
   const nanoseconds = (date % 1000) * ONEMILLION;
-  return [seconds, nanoseconds];
+  return [ seconds, nanoseconds ];
 }
 
 /**
@@ -32,18 +32,18 @@ function hrDateFactory(options) {
   const platformLrTime = options && options.platformLrTime
     ? options.platformLrTime
     : lrDate;
-  const [startSeconds, startNanoseconds] = platformLrTime();
+  const [ startSeconds, startNanoseconds ] = platformLrTime();
   const startHr = platformHrTime();
   return function hrDate() {
-    const [hrSeconds, hrNanoseconds] = platformHrTime(startHr);
+    const [ hrSeconds, hrNanoseconds ] = platformHrTime(startHr);
     let nanoseconds = startNanoseconds + hrNanoseconds;
     let carry = 0;
-    if (nanoseconds >= ONEBILLION) {
+    if(nanoseconds >= ONEBILLION) {
       carry = Math.floor(nanoseconds / ONEBILLION);
       nanoseconds %= ONEBILLION;
     }
     const seconds = startSeconds + hrSeconds + carry;
-    return [seconds, nanoseconds];
+    return [ seconds, nanoseconds ];
   };
 }
 
