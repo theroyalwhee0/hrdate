@@ -9,5 +9,5 @@ console.log(`${second}.${nanosecond}`);
 ```
 
 ## History
- - 0.0.5 Move tests to mocha+expect.
+ - 1.0.0 Move tests to mocha+expect.
  - 0.0.4 Fix off by one error in nanosecond carry.
