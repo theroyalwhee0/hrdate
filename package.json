@@ -1,9 +1,9 @@
 {
   "name": "@theroyalwhee0/hrdate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "High Resolution Date Time for Node",
   "main": "src/index.js",
-  "author": "Adam Mill <theroyalwhee0@gmail.com>",
+  "author": "Adam Mill <hismajesty@theroyalwhee.com>",
   "license": "Apache-2.0",
   "keywords": [
     "date",
@@ -24,12 +24,12 @@
   "devDependencies": {
     "chai": "4.2.0",
     "eslint": "6.5.1",
-    "mocha": "6.2.2"
+    "mocha": "8.2.1"
   },
   "scripts": {
     "test": "mocha --sort --recursive --check-leaks",
     "test-watch": "mocha --watch --reporter=dot --sort --recursive --check-leaks",
     "test-watch-spec": "mocha --watch --reporter=spec --sort --recursive --check-leaks",
-    "lint": "eslint src/**/*.js* && eslint test/**/*.js"
+    "lint": "eslint src/ && eslint test/"
   }
 }
