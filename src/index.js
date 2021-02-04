@@ -10,7 +10,7 @@ const ONEBILLION = 1000000000;
 
 /**
  * Get the current low resolution time as a split second/nanosecond pair array.
- * @return {Array<Number,Number>}         Array pair with seconds/nanoseconds
+ * @returns {Array<Number,Number>}         Array pair with seconds/nanoseconds
  * from the current low resolution date time.
  */
 function lrDate() {
@@ -23,7 +23,7 @@ function lrDate() {
 /**
  * High resolution date time function factory.
  * @param  {Object} options Options.
- * @return {Function}         The hrDate function that was built.
+ * @returns {Function}         The hrDate function that was built.
  */
 function hrDateFactory(options) {
   const platformHrTime = options && options.platformHrTime
@@ -49,7 +49,7 @@ function hrDateFactory(options) {
 
 /**
  * Get the current hight resolution time as a split second/nanosecond pair array.
- * @return {Array<Number,Number>}         Array pair with seconds/nanoseconds
+ * @returns {Array<Number,Number>}         Array pair with seconds/nanoseconds
  * of the current date time.
  */
 const hrDate = hrDateFactory();
