@@ -30,6 +30,7 @@
     "test": "mocha --sort --recursive --check-leaks",
     "test-watch": "mocha --watch --reporter=dot --sort --recursive --check-leaks",
     "test-watch-spec": "mocha --watch --reporter=spec --sort --recursive --check-leaks",
-    "lint": "eslint src/ && eslint test/"
+    "lint": "eslint src/ && eslint test/",
+    "dryrun": "npm test && npm run lint && npm audit && npm publish --dry-run"
   }
 }
