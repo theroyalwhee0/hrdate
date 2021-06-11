@@ -1,6 +1,6 @@
 {
   "name": "@theroyalwhee0/hrdate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "High Resolution Date Time for Node",
   "main": "src/index.js",
   "author": "Adam Mill <hismajesty@theroyalwhee.com>",
