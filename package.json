@@ -1,6 +1,6 @@
 {
   "name": "@theroyalwhee0/hrdate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "High Resolution Date Time for Node",
   "main": "src/index.js",
   "author": "Adam Mill <hismajesty@theroyalwhee.com>",
@@ -20,11 +20,10 @@
     "url": "https://github.com/theroyalwhee0/hrdate/issues"
   },
   "homepage": "https://github.com/theroyalwhee0/hrdate#readme",
-  "dependencies": {},
   "devDependencies": {
-    "chai": "4.2.0",
-    "eslint": "6.5.1",
-    "mocha": "8.2.1"
+    "chai": "4.3.6",
+    "eslint": "8.17.0",
+    "mocha": "10.0.0"
   },
   "scripts": {
     "test": "mocha --sort --recursive --check-leaks",
