@@ -15,6 +15,8 @@ console.log(`${second}.${nanosecond}`);
 
 
 ## History
+- v1.0.3 - 2022-06-04
+  - Bump depends for security.
 - v1.0.2 - 2021-06-11
   - Bump depends for security.
   - Add dryrun scriptlet.
