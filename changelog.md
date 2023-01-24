@@ -7,11 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+
+
+## [1.0.4] - 2023-01-24
 ### Added
 - Add changelog.
 ### Changed
 - Update readme to specify that library is for nodejs
-
 
 ## [1.0.3] - 2022-06-04
 ### Fixed
