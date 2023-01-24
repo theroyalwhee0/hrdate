@@ -1,5 +1,11 @@
 # hrDate: @theroyalwhee/hrdate
-High Resolution Date Time for Node
+High Resolution Date Time for NodeJS.
+
+No significant attempts were made to profile or measure accuracy this code. It's main purpose is to get unique timestamps.
+
+
+## Browser Support
+hrDate does not support browsers as it depends on `process.hrtime`. It would not hard to add browser support, but `performance.now()` is limited because of [mitigations against Spectre](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now).
 
 
 ## Example
@@ -9,27 +15,14 @@ const [second, nanosecond] = hrDate();
 console.log(`${second}.${nanosecond}`);
 ```
 
+
 ## Links
 - GitHub: https://github.com/theroyalwhee0/hrdate
 - NPM: https://www.npmjs.com/package/@theroyalwhee0/hrdate
-
-
-## History
-- v1.0.3 - 2022-06-04
-  - Bump depends for security.
-- v1.0.2 - 2021-06-11
-  - Bump depends for security.
-  - Add dryrun scriptlet.
-- v1.0.1 - 2021-01-29
-  - Bump devdepends.
-  - Improve readme.
-- v1.0.0
-  - Move tests to mocha+expect.
-- v0.0.4
-  - Fix off by one error in nanosecond carry.
+- Changelog: https://github.com/theroyalwhee0/hrdate/blob/main/changelog.md
 
 
 ## Legal & License
-Copyright 2017-2021 Adam Mill
+Copyright 2017-2023 Adam Mill
 
 This library is released under Apache 2 license. See [LICENSE](https://github.com/theroyalwhee0/hrdate/blob/master/LICENSE) for more details.
